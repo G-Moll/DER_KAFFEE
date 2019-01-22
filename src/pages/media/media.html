@@ -10,12 +10,10 @@
 <ion-content padding>
 
     <ion-card
+        (click)="loadDetails( currentVideo )"
         *ngFor="let currentVideo of _dataMedia">
-        <video
-            poster="assets/vids/{{ currentVideo.poster }}"
-            controls>
-            <source src="assets/vids/{{ currentVideo.video }}" type="video/mp4">
-        </video>
+
+        <img src="assets/vids/{{ currentVideo.poster }}">
     
         <ion-card-content>
             <ion-card-title>{{ currentVideo.title }}</ion-card-title>

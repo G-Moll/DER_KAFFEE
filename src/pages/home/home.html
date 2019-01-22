@@ -10,12 +10,12 @@
 <ion-content padding>
 
     <ion-card
+        (click)="loadDetails( currentCard )"
         *ngFor="let currentCard of _dataCards">
         <img src="assets/imgs/{{ currentCard.image }}">
 
         <ion-card-content>
-            <ion-card-title>{{ currentCard.title }}</ion-card-title>
-            <p>{{ currentCard.descripcion }}</p>
+            <ion-card-title>{{ currentCard.title | uppercase }}</ion-card-title>
         </ion-card-content>
     </ion-card>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { DetailshomePage } from '../detailshome/detailshome';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
     private _dataCards: any;
+    private _detailshome: any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+        this._detailshome = DetailshomePage;
+
         this._dataCards = [
             { title: "Enjoying a Coffee", image: "adult-attractive.png",         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." },
             { title: "Sharing Moments",   image: "aroma-art-beverage.png",       descripcion: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non." },
@@ -19,7 +23,11 @@ export class HomePage {
     }
 
     ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+        console.log('ionViewDidLoad HomePage');
+    }
+
+    loadDetails( currentInfo ) {
+        this.navCtrl.push( this._detailshome, { details: currentInfo } );
     }
 
 }
