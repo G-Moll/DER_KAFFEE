@@ -1,37 +1,26 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>MEDIA</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>MEDIA</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-    <ion-card>
+    <ion-card
+        *ngFor="let currentVideo of _dataMedia">
         <video
-            poster="assets/vids/CoffeeBeans-poster.png"
+            poster="assets/vids/{{ currentVideo.poster }}"
             controls>
-            <source src="assets/vids/CoffeeBeans.mp4" type="video/mp4">
+            <source src="assets/vids/{{ currentVideo.video }}" type="video/mp4">
         </video>
     
-      <ion-card-content>
-        <ion-card-title>Video 1</ion-card-title>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </ion-card-content>
-    
-    </ion-card>
-
-    <ion-card>
-        <video controls>
-            <source src="assets/vids/CoffeeComputer.mp4" type="video/mp4">
-        </video>
-    
-      <ion-card-content>
-        <ion-card-title>Video 1</ion-card-title>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </ion-card-content>
+        <ion-card-content>
+            <ion-card-title>{{ currentVideo.title }}</ion-card-title>
+            <p>{{ currentVideo.descripcion }}</p>
+        </ion-card-content>
     
     </ion-card>
 
